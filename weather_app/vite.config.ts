@@ -6,9 +6,12 @@ import postcss from './postcss.config.js'; // force it
 console.log(">>> VITE CONFIG LOADED");
 
 export default defineConfig({
-  plugins: [react()],
-  css: {
-    postcss,
-  },
+
+	base: "/weather_app/",
+
+	plugins: [react()],
+	css: {
+		postcss,
+	},
 });
 
