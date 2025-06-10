@@ -13,9 +13,15 @@
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            nodejs_latest
+            nodejs_20
             yarn
             tailwindcss
+	    sqlite
+	    python3
+	    pkg-config
+	    python3Packages.setuptools
+	    python3Packages.pip
+	    gcc
           ];
 
           shellHook = ''
