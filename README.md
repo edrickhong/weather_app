@@ -1,11 +1,12 @@
 # Weather App 🌤️
 
-This is my submission for **Tech Assessment 1** of the AI/ML Software Engineer Intern role.
+This is my submission for **Tech Assessment 1 & 2** of the AI/ML Software Engineer Intern role.
 
 ## 🔧 Features
 
 - Search weather by city with fuzzy suggestions
 - Get weather based on current location using browser geolocation
+- CRUD operations to create/read/update/delete weather entries
 - Toggle 5-day forecast view
 - Weather data from [weatherapi.com](https://www.weatherapi.com/)
 - Tailwind CSS styling
@@ -32,6 +33,8 @@ This is my submission for **Tech Assessment 1** of the AI/ML Software Engineer I
 4. Start the backend server:
    ```bash
    yarn build && yarn start
+   #If deploying om a remote server
+   yarn build && yarn start --deploy
    ```
 
 5. Start the dev server:
@@ -43,6 +46,7 @@ This is my submission for **Tech Assessment 1** of the AI/ML Software Engineer I
 
 Hosted on GitHub Pages:  
 ➡️ [https://edrickhong.github.io/weather_app/](https://edrickhong.github.io/weather_app/)
+<br>**Note**: App functionality is contingent on API key being valid at current time. CRUD "Saved" tab operation is contingent on the server being online.
 
 ## 📁 Notes
 
