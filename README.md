@@ -11,13 +11,6 @@ This is my submission for **Tech Assessment 1** of the AI/ML Software Engineer I
 - Tailwind CSS styling
 - Built with React, TypeScript, Vite
 
-## ✅ Tech Assessment 1 Checklist
-
-- [x] User input with fuzzy city suggestions
-- [x] Current weather with icon and details
-- [x] Current location support
-- [x] Optional 5-day forecast toggle
-
 ## 🧪 How to Run Locally
 
 1. Clone the repo:
@@ -31,12 +24,17 @@ This is my submission for **Tech Assessment 1** of the AI/ML Software Engineer I
    yarn
    ```
 
-3. Set up your API key (from https://weatherapi.com):
+3. Set up your API key (from https://weatherapi.com) and backend URL:
    ```bash
    echo "VITE_WEATHER_API_KEY=your_key_here" > .env
+   echo "VITE_BACKEND_URL=your_url_here" >> .env
+   ```
+4. Start the backend server:
+   ```bash
+   yarn build && yarn start
    ```
 
-4. Start the dev server:
+5. Start the dev server:
    ```bash
    yarn dev
    ```
