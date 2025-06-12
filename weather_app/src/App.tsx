@@ -3,10 +3,6 @@ import axios from 'axios'
 import Weather from './Weather'
 import DB from './DB'
 
-const BACKEND_URL = "http://localhost:3001/api/weather";
-
-
-
 function App() {
 
 	const [tab, setTab] = useState<'weather' | 'database'>('weather');

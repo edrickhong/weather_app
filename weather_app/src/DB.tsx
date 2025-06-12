@@ -3,6 +3,11 @@ import axios from 'axios';
 import cities from './cities.json';
 
 
+
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
+
 const fetchWeatherData = async (
 	city: string,
 	startDate: string,
@@ -63,7 +68,7 @@ export default function Database() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const res = await axios.get('http://localhost:3001/api/weather');
+				const res = await axios.get(`${BACKEND_URL}/api/weather`);
 				setEntries(res.data);
 			} catch (err) {
 				console.error("Failed to load entries", err);
@@ -204,7 +209,7 @@ export default function Database() {
 			const updatedEntries = await Promise.all(
 				modified.map(async (e) => {
 					const newData = await fetchWeatherData(e.city, e.startDate, e.endDate);
-					await axios.put(`http://localhost:3001/api/weather/${e.id}`, {
+					await axios.put(`${BACKEND_URL}/api/weather/${e.id}`, {
 						city: e.city,
 					startDate: e.startDate,
 					endDate: e.endDate,
@@ -228,7 +233,7 @@ export default function Database() {
 			try {
 				await Promise.all(
 					Array.from(selected).map(id =>
-								 axios.delete(`http://localhost:3001/api/weather/${id}`)
+								 axios.delete(`${BACKEND_URL}/api/weather/${id}`)
 								)
 				);
 				setEntries(prev => prev.filter(e => !selected.has(e.id)));

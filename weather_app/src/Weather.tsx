@@ -5,6 +5,7 @@ import cities from './cities.json';
 export default function Weather() {
 	const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 	const BASE_URL = "https://api.weatherapi.com/v1";
+	const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 	const today = new Date();
 	const fifth_day = new Date(new Date(today).setDate(today.getDate() - 5));
@@ -287,7 +288,7 @@ export default function Weather() {
 								}]
 									: [];
 
-									await axios.post("http://localhost:3001/api/weather", {
+									await axios.post(`${BACKEND_URL}/api/weather`, {
 										city: weather.location.name,
 										country: weather.location.country,
 										startDate: showForecast ? startDate : date_fmt(today),
